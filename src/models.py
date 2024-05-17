@@ -70,7 +70,7 @@ class FavoritePlanets(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     user_id_relationship = relationship(User)
     planets_id = Column(Integer, ForeignKey('planets.id'))
-    starships_id_relationship = relationship(Planets)
+    planets_id_relationship = relationship(Planets)
 
     def to_dict(self):
         return {}
