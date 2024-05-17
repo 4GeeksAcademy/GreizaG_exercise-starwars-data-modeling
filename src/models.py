@@ -13,26 +13,26 @@ class User(Base):
     name = Column(String(32))
     last_name = Column(String(32))
     email = Column(String(50), nullable=False)
-    password = Column(Sting(32), nullable=False)
+    password = Column(String(32), nullable=False)
 
 class People(Base):
     __tablename__ = 'people'
     id = Column(Integer, primary_key=True)
-    name = Column(String)
+    name = Column(String(50))
     heigth = Column(Integer)
     mass = Column(Integer)
-    hair_color = Column(String)
-    eye_color = Column(String)
-    skin_color = Column(String)
-    birth_year = Column(String)
-    gender = Column(String)
+    hair_color = Column(String(20))
+    eye_color = Column(String(20))
+    skin_color = Column(String(20))
+    birth_year = Column(String(20))
+    gender = Column(String(20))
 
 class Starships(Base):
     __tablename__ = 'starships'
     id = Column(Integer, primary_key=True)
-    name = Column(String)
-    model = Column(String)
-    starship_class = Column(String)
+    name = Column(String(50))
+    model = Column(String(50))
+    starship_class = Column(String(50))
     length = Column(Integer)
     crew = Column(Integer)
     passengers = Column(Integer)
@@ -40,12 +40,12 @@ class Starships(Base):
 class Planets(Base):
     __tablename__ = 'planets'
     id = Column(Integer, primary_key=True)
-    name = Column(String)
+    name = Column(String(50))
     diameter = Column(Integer)
-    gravity = Column(String)
+    gravity = Column(String(50))
     population = Column(Integer)
-    climate = Column(String)
-    terrain = Column(String)
+    climate = Column(String(50))
+    terrain = Column(String(50))
     surface_water = Column(Integer)
 
 class FavoritePeople(Base):
