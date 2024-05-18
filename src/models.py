@@ -12,13 +12,13 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(32))
     last_name = Column(String(32))
-    email = Column(String(50), nullable=False)
+    email = Column(String(50), nullable=False, unique=True)
     password = Column(String(32), nullable=False)
 
 class People(Base):
     __tablename__ = 'people'
     id = Column(Integer, primary_key=True)
-    name = Column(String(50))
+    name = Column(String(50), unique=True)
     heigth = Column(Integer)
     mass = Column(Integer)
     hair_color = Column(String(20))
@@ -30,7 +30,7 @@ class People(Base):
 class Starships(Base):
     __tablename__ = 'starships'
     id = Column(Integer, primary_key=True)
-    name = Column(String(50))
+    name = Column(String(50), unique=True)
     model = Column(String(50))
     starship_class = Column(String(50))
     length = Column(Integer)
@@ -40,7 +40,7 @@ class Starships(Base):
 class Planets(Base):
     __tablename__ = 'planets'
     id = Column(Integer, primary_key=True)
-    name = Column(String(50))
+    name = Column(String(50), unique=True)
     diameter = Column(Integer)
     gravity = Column(String(50))
     population = Column(Integer)
